@@ -31,14 +31,6 @@
 % 页码样式
 \AtBeginDocument{\pagestyle{plain}}
 
-% 设置字体
-\setCJKmainfont{Noto Serif CJK SC}
-\setCJKsansfont{Noto Sans CJK SC}
-\setCJKmonofont{Noto Sans Mono CJK SC}
-\setmainfont{TeX Gyre Termes}
-\setsansfont{TeX Gyre Heros}
-\setmonofont{DejaVu Sans Mono}
-
 % 表格自动适配列宽X列
 \RequirePackage{tabularx}
 
@@ -52,7 +44,7 @@
 \RequirePackage{graphicx}
 
 % 数学符号集合
-\RequirePackage{newtxmath}
+\RequirePackage{unicode-math}
 
 % 参考文献
 \RequirePackage[numbers,sort&compress]{natbib}
@@ -114,3 +106,12 @@
   \date{}%
   \maketitle%
 }
+
+% 设置字体
+\setCJKmainfont{Noto Serif CJK SC}
+\setCJKsansfont{Noto Sans CJK SC}
+\setCJKmonofont{Noto Sans Mono CJK SC}
+\setmainfont{TeX Gyre Termes}
+\setsansfont{TeX Gyre Heros}
+\setmonofont{DejaVu Sans Mono}
+\setmathfont{TeX Gyre Termes Math}
