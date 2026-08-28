@@ -1,15 +1,24 @@
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{zh_paper}[中文论文]
+\ProvidesClass{en_paper}[英文论文]
 
-% 不允许向 zh_paper 传递任何参数
+% 不允许向 en_paper 传递任何参数
 \DeclareOption*{%
-  \ClassWarning{zh_paper}{Option `\CurrentOption' is not allowed and will be ignored}%
+  \ClassWarning{en_paper}{Option `\CurrentOption' is not allowed and will be ignored}%
 }
 \ProcessOptions\relax
-\LoadClass[12pt,a4paper,fontset=none]{ctexart}
+\LoadClass[12pt,a4paper]{article}
 
-% 一级标题靠左
-\ctexset{section={format+=\raggedright}}
+% 英文断行/连字：提供英文断字规则、直引号弯引号等排版细节
+\RequirePackage[english]{babel}
+
+% T1 编码：newtxtext 字体需要 T1 编码才能正确取字形（该设置不会被 newtxtext 自动引入，必须显式声明）
+\RequirePackage[T1]{fontenc}
+
+% 正文西文字体（Times 风格）
+\RequirePackage[type1]{newtxtext}
+
+% 微观排版优化（字符边缘微调、字距微伸缩），newtxtext 不会自带此功能
+\RequirePackage{microtype}
 
 % 页边距
 \RequirePackage{geometry}
@@ -30,14 +39,6 @@
 
 % 页码样式
 \AtBeginDocument{\pagestyle{plain}}
-
-% 设置字体
-\setCJKmainfont{Noto Serif CJK SC}
-\setCJKsansfont{Noto Sans CJK SC}
-\setCJKmonofont{Noto Sans Mono CJK SC}
-\setmainfont{TeX Gyre Termes}
-\setsansfont{TeX Gyre Heros}
-\setmonofont{DejaVu Sans Mono}
 
 % 表格自动适配列宽X列
 \RequirePackage{tabularx}
@@ -78,7 +79,7 @@
 \RequirePackage{orcidlink}
 
 % 标题样式
-\newcommand{\papertitlestyle}{\sffamily\bfseries\zihao{2}}
+\newcommand{\papertitlestyle}{\sffamily\bfseries\LARGE}
 
 % 定义论文标题
 % 作用一：以 \papertitlestyle 样式生成正文标题页；
