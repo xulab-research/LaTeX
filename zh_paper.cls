@@ -21,6 +21,9 @@
 % 首行缩进
 \setlength{\parindent}{2em}
 
+% 第一段也缩进
+\RequirePackage{indentfirst}
+
 % 更少的过宽/过窄行
 \setlength{\emergencystretch}{2em}
 \setlength{\parskip}{0pt}
@@ -31,7 +34,7 @@
 % 页码样式
 \AtBeginDocument{\pagestyle{plain}}
 
-% 表格自动适配列宽X列
+% 表格自动适配列宽 X 列
 \RequirePackage{tabularx}
 
 % 三线表
@@ -47,10 +50,9 @@
 \RequirePackage{unicode-math}
 
 % 参考文献
-\RequirePackage[numbers,sort&compress]{natbib}
-
-% 分章独立参考文献
-\RequirePackage{chapterbib}
+\RequirePackage{csquotes}
+\RequirePackage[style=numeric-comp,sorting=none,backend=biber]{biblatex}
+\addbibresource{references.bib}
 
 % 代码与文件树
 \RequirePackage{listings}
@@ -83,12 +85,11 @@
 % 代码/文件名等标识符：\code{...}
 \newcommand{\code}[1]{\nolinkurl{#1}}
 
-% 参考文献：正文与 SI 末尾各调用一次
-\newcommand{\printpaperbibliography}{\bibliographystyle{plainnat}\bibliography{references}}
-
-% SI 标题页：复位计数器、启用 S 前缀编号，并用 \papertitle 记录的标题生成 SI 标题，SI 标题页与正文标题页样式一致、且包含全部作者与单位信息
+% SI 标题页：复位计数器、启用 S 前缀编号、开启独立参考文献分区(refsection)，并用 \papertitle 记录的标题生成 SI 标题，SI 标题页与正文标题页样式一致、且包含全部作者与单位信息
 \newcommand{\makesititle}{%
+  \newrefsection%
   \pagenumbering{arabic}%
+  \setcounter{page}{1}%
   \setcounter{section}{0}%
   \setcounter{subsection}{0}%
   \setcounter{figure}{0}%
