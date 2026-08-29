@@ -22,10 +22,11 @@
 
 % 页边距
 \RequirePackage{geometry}
-\geometry{top=2cm,bottom=2cm,left=2cm,right=2cm}
+\geometry{top=1.5cm,bottom=1.5cm,left=2cm,right=2cm}
 
-% 行距
-\linespread{1.25}
+% 设置正文行距，且保证 caption、表格和脚注等依然保持紧凑的单倍行距
+\RequirePackage{setspace}
+\setstretch{1.25}
 
 % 首行缩进
 \setlength{\parindent}{2em}
@@ -43,20 +44,56 @@
 % 页码样式
 \AtBeginDocument{\pagestyle{plain}}
 
-% 表格自动适配列宽 X 列
-\RequirePackage{tabularx}
-
 % 三线表
 \RequirePackage{booktabs}
 
-% 单元格跨行
+% 表格自动适配列宽 X 列
+\RequirePackage{tabularx}
+
+% 单元格纵向合并跨行
 \RequirePackage{multirow}
+
+% 单元格内多行文字
+\RequirePackage{makecell}
+
+% 表格底部注脚与注释规范排版
+\RequirePackage{threeparttable}
+
+% 跨页长表格
+\RequirePackage{longtable}
+
+% 宽表格横向旋转页面
+\RequirePackage{lscape}
+
+% 现代表格排版引擎，与经典表格并存，支持标准的 booktabs 线条
+\RequirePackage{tabularray}
+\UseTblrLibrary{booktabs}
+
+% 表格行高
+\renewcommand{\arraystretch}{1.2}
 
 % 插图
 \RequirePackage{graphicx}
 
 % 数学符号集合
 \RequirePackage{newtxmath}
+
+% 公式粗体
+\RequirePackage{bm}
+
+% 图表标题样式：加粗编号 + 句点分隔（如 "Figure 1."）
+\RequirePackage{caption}
+\captionsetup{font=footnotesize, labelfont=bf, labelsep=period}
+
+% 提供 algorithm 浮动体环境
+\RequirePackage{algorithm}
+
+% 现代伪代码语法引擎
+\RequirePackage[indentLine=true]{algpseudocodex}
+
+% 输入/输出标签加粗
+\algrenewcommand\algorithmicrequire{\textbf{Input:}}
+\algrenewcommand\algorithmicensure{\textbf{Output:}}
 
 % 参考文献
 \RequirePackage{csquotes}

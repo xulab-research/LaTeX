@@ -13,7 +13,7 @@
 
 % 页边距
 \RequirePackage{geometry}
-\geometry{top=2cm,bottom=2cm,left=2cm,right=2cm}
+\geometry{top=1.5cm,bottom=1.5cm,left=2cm,right=2cm}
 
 % 行距
 \linespread{1.25}
