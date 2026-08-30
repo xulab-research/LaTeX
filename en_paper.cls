@@ -89,7 +89,8 @@
 \RequirePackage{algorithm}
 
 % 现代伪代码语法引擎
-\RequirePackage[indentLine=true]{algpseudocodex}
+\RequirePackage{algpseudocodex}
+\algcset{indentLine=true}
 
 % 输入/输出标签加粗
 \algrenewcommand\algorithmicrequire{\textbf{Input:}}
@@ -156,9 +157,3 @@
   \date{}%
   \maketitle%
 }
-
-% 设置字体
-\setmainfont{TeX Gyre Termes}
-\setsansfont{TeX Gyre Heros}
-\setmonofont{DejaVu Sans Mono}
-\setmathfont{TeX Gyre Termes Math}
