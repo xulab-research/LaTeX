@@ -9,7 +9,7 @@
 \LoadClass[aspectratio=169,16pt,xcolor=table]{beamer}
 
 % 基础宏包
-\RequirePackage[UTF8,heading=false,fontset=none]{ctex}
+\RequirePackage[heading=false,fontset=none]{ctex}
 \RequirePackage{booktabs}
 \RequirePackage{tcolorbox}
 \RequirePackage{lmodern}
@@ -43,7 +43,7 @@ ItalicFont={Arial Italic}, BoldItalicFont={Arial Bold Italic}]{Arial.ttf}
 
 % 列表间距压缩命令
 \newcommand{\tightlist}{%
-  \setlength{\itemsep}{0.2em}%
+  \setlength{\itemsep}{0.15em}%
   \setlength{\parskip}{0pt}%
   \setlength{\parsep}{0pt}%
   \setlength{\topsep}{0pt}%
@@ -51,25 +51,27 @@ ItalicFont={Arial Italic}, BoldItalicFont={Arial Bold Italic}]{Arial.ttf}
 }
 
 % 预设 tcolorbox 样式
-\newtcolorbox{mainbox}[2][]{%
-  center, halign=left, title={#2}, fontupper=\scriptsize,
-  colframe=black, colback=white, colbacktitle=black, coltitle=white,
-  boxrule=1pt, arc=2mm,
-  before upper={\setlength{\leftmargini}{0em}}, #1
-}
-\newtcolorbox{bluebox}[2][]{%
-  center, halign=left, title={#2}, fontupper=\scriptsize,
-  colframe=CustomDarkBlue, colback=ColBackLightBlue,
-  colbacktitle=CustomBlue, coltitle=white,
-  boxrule=1pt, arc=2mm,
-  before upper={\setlength{\leftmargini}{0em}}, #1
-}
-\newtcolorbox{redbox}[2][]{%
-  center, halign=left, title={#2}, fontupper=\scriptsize,
-  colframe=CustomDarkRed, colback=ColBackLightRed,
-  colbacktitle=CustomRed, coltitle=white,
-  boxrule=1pt, arc=2mm,
-  before upper={\setlength{\leftmargini}{0em}}, #1
+\tcbset{
+  compactbox/.style={
+    center, halign=left, fontupper=\scriptsize, fonttitle=\scriptsize\bfseries,
+    boxrule=0.8pt, arc=1.5mm,
+    top=1mm, bottom=1mm, left=1.5mm, right=1.5mm,
+    middle=1mm, boxsep=0.5mm,
+    before upper={\setlength{\leftmargini}{1em}}
+  }
 }
 
-\endinput
+\newtcolorbox{mainbox}[2][]{%
+  compactbox, title={#2},
+  colframe=black, colback=white, colbacktitle=black, coltitle=white, #1
+}
+\newtcolorbox{bluebox}[2][]{%
+  compactbox, title={#2},
+  colframe=CustomDarkBlue, colback=ColBackLightBlue,
+  colbacktitle=CustomBlue, coltitle=white, #1
+}
+\newtcolorbox{redbox}[2][]{%
+  compactbox, title={#2},
+  colframe=CustomDarkRed, colback=ColBackLightRed,
+  colbacktitle=CustomRed, coltitle=white, #1
+}
