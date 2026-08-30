@@ -144,6 +144,7 @@
   \setcounter{figure}{0}%
   \setcounter{table}{0}%
   \setcounter{equation}{0}%
+  \renewcommand{\thepage}{S\arabic{page}}%
   \renewcommand{\thesection}{S\arabic{section}}%
   \renewcommand{\thefigure}{S\arabic{figure}}%
   \renewcommand{\thetable}{S\arabic{table}}%
@@ -152,7 +153,6 @@
   \renewcommand{\theHfigure}{S\arabic{figure}}%
   \renewcommand{\theHtable}{S\arabic{table}}%
   \renewcommand{\theHequation}{S\arabic{equation}}%
-  \def\Hy@pageanchor{S\arabic{page}}%
   \title{Supplementary Information for \\ \papertitlestyle\@papertitle}%
   \date{}%
   \maketitle%

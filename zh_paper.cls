@@ -11,20 +11,17 @@
 % 英文断行/连字：提供英文断字规则、直引号弯引号等排版细节
 \RequirePackage[english]{babel}
 
+% 数学符号集合
+\RequirePackage{unicode-math}
+
 % 设置字体
 \setCJKmainfont{Noto Serif CJK SC}
 \setCJKsansfont{Noto Sans CJK SC}
-\setCJKmonofont{Consolas}
+\setCJKmonofont{Noto Sans Mono CJK SC}
 \setmainfont{TeX Gyre Termes}
 \setsansfont{TeX Gyre Heros}
 \setmonofont{Consolas}
 \setmathfont{TeX Gyre Termes Math}
-
-% 数学符号集合
-\RequirePackage{unicode-math}
-
-% 公式粗体
-\RequirePackage{bm}
 
 % 一级标题靠左
 \ctexset{section={format+=\raggedright}}
@@ -147,6 +144,7 @@
   \setcounter{figure}{0}%
   \setcounter{table}{0}%
   \setcounter{equation}{0}%
+  \renewcommand{\thepage}{S\arabic{page}}%
   \renewcommand{\thesection}{S\arabic{section}}%
   \renewcommand{\thefigure}{S\arabic{figure}}%
   \renewcommand{\thetable}{S\arabic{table}}%
@@ -155,7 +153,6 @@
   \renewcommand{\theHfigure}{S\arabic{figure}}%
   \renewcommand{\theHtable}{S\arabic{table}}%
   \renewcommand{\theHequation}{S\arabic{equation}}%
-  \def\Hy@pageanchor{S\arabic{page}}%
   \title{Supplementary Information for \\ \papertitlestyle\@papertitle}%
   \date{}%
   \maketitle%
