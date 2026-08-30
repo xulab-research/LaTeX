@@ -56,7 +56,7 @@
 
 % 代码与文件树
 \RequirePackage{listings}
-\lstdefinestyle{tree}{basicstyle=\ttfamily\small,columns=fullflexible,keepspaces=true,breaklines=true,showstringspaces=false}
+\lstdefinestyle{tree}{basicstyle=\ttfamily\small,commentstyle=\ttfamily\scriptsize,morecomment=[l]{\#},columns=fullflexible,keepspaces=true,breaklines=true,showstringspaces=false}
 
 % 双标题页（正文 + SI，均含作者与单位）机制的必要依赖，而且需要放在 authblk 前
 \RequirePackage{titling}
