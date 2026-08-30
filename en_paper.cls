@@ -114,6 +114,9 @@
 \RequirePackage{hyperref}
 \hypersetup{colorlinks=true,linkcolor=red,citecolor=blue,urlcolor=blue}
 
+% 链接行末自动换行
+\RequirePackage{xurl}
+
 % ORCID（需在 hyperref 之后加载）
 \RequirePackage{orcidlink}
 
