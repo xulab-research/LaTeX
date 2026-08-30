@@ -1,5 +1,5 @@
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{en_paper}[英文论文]
+\ProvidesClass{en_paper}[English academic paper template.]
 
 % 不允许向 en_paper 传递任何参数
 \DeclareOption*{%
