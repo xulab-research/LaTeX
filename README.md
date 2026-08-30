@@ -4,11 +4,11 @@ A collection of lightweight LaTeX class templates for academic writing and prese
 
 ## Included Templates
 
-- `zh_paper.cls` — Chinese academic paper template.
-- `zh_cover_letter.cls` — Chinese Cover Letter template.
-- `zh_beamer.cls` — Chinese academic presentation template.
-- `en_paper.cls` — English academic paper template.
-- `en_cover_letter.cls` — English Cover Letter template.
+- `rebuttal.cls` — Rebuttal Template.
+- `cover_letter.cls` — Cover Letter Template.
+- `zh_paper.cls` — Chinese Academic Paper Template.
+- `zh_beamer.cls` — Chinese Academic Beamer Template.
+- `en_paper.cls` — English Academic Paper Template.
 
 ## Usage
 

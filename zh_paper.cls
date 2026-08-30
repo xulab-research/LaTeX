@@ -1,5 +1,5 @@
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{zh_paper}[Chinese academic paper template.]
+\ProvidesClass{zh_paper}[中文论文]
 
 % 不允许向 zh_paper 传递任何参数
 \DeclareOption*{%
@@ -14,14 +14,21 @@
 % 数学符号集合
 \RequirePackage{unicode-math}
 
-% 设置字体
-\setCJKmainfont{Noto Serif CJK SC}
-\setCJKsansfont{Noto Sans CJK SC}
-\setCJKmonofont{Noto Sans Mono CJK SC}
+% 中文字体设置 (开启 AutoFakeSlant 避免缺失独立斜体文件警告)
+\setCJKmainfont{Noto Serif CJK SC}[AutoFakeSlant]
+\setCJKsansfont{Noto Sans CJK SC}[AutoFakeSlant]
+\setCJKmonofont{Noto Sans Mono CJK SC}[AutoFakeSlant]
+
+% 西文字体设置
 \setmainfont{TeX Gyre Termes}
 \setsansfont{TeX Gyre Heros}
-\setmonofont{Consolas}
+\setmonofont{Consolas}[Scale=MatchLowercase]
+
+% 数学字体设置
 \setmathfont{TeX Gyre Termes Math}
+
+% 优化中西文混排断行与字距弹性，消除 Underfull \hbox
+\xeCJKsetup{CJKecglue=\hspace{0.25em plus 0.15em minus 0.05em}}
 
 % 一级标题靠左
 \ctexset{section={format+=\raggedright}}
@@ -137,7 +144,7 @@
 % SI 标题页：复位计数器、启用 S 前缀编号、开启独立参考文献分区(refsection)，并用 \papertitle 记录的标题生成 SI 标题，SI 标题页与正文标题页样式一致、且包含全部作者与单位信息
 \newcommand{\makesititle}{%
   \newrefsection%
-  \pagenumbering{arabic}%
+  \clearpage%
   \setcounter{page}{1}%
   \setcounter{section}{0}%
   \setcounter{subsection}{0}%

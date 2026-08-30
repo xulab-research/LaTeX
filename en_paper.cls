@@ -1,5 +1,5 @@
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{en_paper}[English academic paper template.]
+\ProvidesClass{en_paper}[English Academic Paper Template]
 
 % 不允许向 en_paper 传递任何参数
 \DeclareOption*{%
@@ -137,7 +137,7 @@
 % SI 标题页：复位计数器、启用 S 前缀编号、开启独立参考文献分区(refsection)，并用 \papertitle 记录的标题生成 SI 标题，SI 标题页与正文标题页样式一致、且包含全部作者与单位信息
 \newcommand{\makesititle}{%
   \newrefsection%
-  \pagenumbering{arabic}%
+  \clearpage%
   \setcounter{page}{1}%
   \setcounter{section}{0}%
   \setcounter{subsection}{0}%

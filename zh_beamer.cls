@@ -1,5 +1,5 @@
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{zh_beamer}[Chinese academic presentation template.]
+\ProvidesClass{zh_beamer}[Chinese Academic Beamer Template]
 
 % 不允许向 zh_beamer 传递任何参数
 \DeclareOption*{%
