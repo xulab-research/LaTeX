@@ -17,6 +17,9 @@
 % 正文西文字体（Times 风格）
 \RequirePackage[type1]{newtxtext}
 
+% 补全完整粗体支持的 Consolas 风格等宽字体
+\RequirePackage[scaled=0.95]{inconsolata}
+
 % 数学符号集合
 \RequirePackage{newtxmath}
 
