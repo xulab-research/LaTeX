@@ -5,8 +5,10 @@ A collection of lightweight LaTeX class templates for academic writing and prese
 ## Included Templates
 
 - `zh_paper.cls` — Chinese academic paper template.
+- `zh_cover_letter.cls` — Chinese Cover Letter template.
+- `zh_beamer.cls` — Chinese academic presentation template.
 - `en_paper.cls` — English academic paper template.
-- `zh_beamer.cls` — Chinese Beamer presentation template.
+- `en_cover_letter.cls` — English Cover Letter template.
 
 ## Usage
 
@@ -20,12 +22,16 @@ Example:
 \documentclass{zh_paper}
 ```
 
-## Features
-
-- Lightweight and easy to use.
-- Suitable for Chinese and English academic documents.
-- Supports paper and presentation templates.
-
 ## License
 
 This project is licensed under the Apache License 2.0.
+
+Unless otherwise stated, the source code, model architecture, training scripts,
+inference scripts, and released model weights/checkpoints are licensed under
+Apache-2.0.
+
+Datasets used in this project may be subject to their original licenses and
+terms of use. Please refer to the corresponding dataset sources for details.
+
+This software is provided for research purposes and is not intended for clinical
+diagnosis, medical decision-making, or direct therapeutic use.

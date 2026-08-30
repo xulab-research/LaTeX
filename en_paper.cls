@@ -156,3 +156,9 @@
   \date{}%
   \maketitle%
 }
+
+% 设置字体
+\setmainfont{TeX Gyre Termes}
+\setsansfont{TeX Gyre Heros}
+\setmonofont{DejaVu Sans Mono}
+\setmathfont{TeX Gyre Termes Math}
