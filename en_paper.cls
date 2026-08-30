@@ -90,6 +90,7 @@
 
 % 现代伪代码语法引擎
 \RequirePackage{algpseudocodex}
+\algcset{commentColor=red}
 
 % 输入/输出标签加粗
 \algrenewcommand\algorithmicrequire{\textbf{Input:}}
