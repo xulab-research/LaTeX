@@ -8,14 +8,8 @@
 \ProcessOptions\relax
 \LoadClass[12pt,a4paper,fontset=none]{ctexart}
 
-% 设置字体
-\setCJKmainfont{Noto Serif CJK SC}
-\setCJKsansfont{Noto Sans CJK SC}
-\setCJKmonofont{Consolas}
-\setmainfont{TeX Gyre Termes}
-\setsansfont{TeX Gyre Heros}
-\setmonofont{Consolas}
-\setmathfont{TeX Gyre Termes Math}
+% 英文断行/连字：提供英文断字规则、直引号弯引号等排版细节
+\RequirePackage[english]{babel}
 
 % 一级标题靠左
 \ctexset{section={format+=\raggedright}}
@@ -153,3 +147,12 @@
   \date{}%
   \maketitle%
 }
+
+% 设置字体
+\setCJKmainfont{Noto Serif CJK SC}
+\setCJKsansfont{Noto Sans CJK SC}
+\setCJKmonofont{Consolas}
+\setmainfont{TeX Gyre Termes}
+\setsansfont{TeX Gyre Heros}
+\setmonofont{Consolas}
+\setmathfont{TeX Gyre Termes Math}

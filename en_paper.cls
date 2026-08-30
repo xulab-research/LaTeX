@@ -11,18 +11,6 @@
 % 英文断行/连字：提供英文断字规则、直引号弯引号等排版细节
 \RequirePackage[english]{babel}
 
-% T1 编码：newtxtext 字体需要 T1 编码才能正确取字形（该设置不会被 newtxtext 自动引入，必须显式声明）
-\RequirePackage[T1]{fontenc}
-
-% 正文西文字体（Times 风格）
-\RequirePackage[type1]{newtxtext}
-
-% 等宽字体：Consolas 风格（自动应用于 \code{}、listings、\texttt 等）
-\RequirePackage[scaled=0.95]{inconsolata}
-
-% 微观排版优化（字符边缘微调、字距微伸缩），newtxtext 不会自带此功能
-\RequirePackage{microtype}
-
 % 页边距
 \RequirePackage{geometry}
 \geometry{top=1.5cm,bottom=1.5cm,left=2cm,right=2cm}
@@ -159,3 +147,15 @@
   \date{}%
   \maketitle%
 }
+
+% T1 编码：newtxtext 字体需要 T1 编码才能正确取字形（该设置不会被 newtxtext 自动引入，必须显式声明）
+\RequirePackage[T1]{fontenc}
+
+% 正文西文字体（Times 风格）
+\RequirePackage[type1]{newtxtext}
+
+% 等宽字体：Consolas 风格（自动应用于 \code{}、listings、\texttt 等）
+\RequirePackage[scaled=0.95]{inconsolata}
+
+% 微观排版优化（字符边缘微调、字距微伸缩），newtxtext 不会自带此功能
+\RequirePackage{microtype}
