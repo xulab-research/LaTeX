@@ -23,6 +23,8 @@
 % 数学符号集合
 \RequirePackage{unicode-math}
 
+% 公式粗体
+\RequirePackage{bm}
 
 % 一级标题靠左
 \ctexset{section={format+=\raggedright}}
@@ -153,7 +155,7 @@
   \renewcommand{\theHfigure}{S\arabic{figure}}%
   \renewcommand{\theHtable}{S\arabic{table}}%
   \renewcommand{\theHequation}{S\arabic{equation}}%
-  \renewcommand{\theHpage}{S\arabic{page}}%
+  \def\Hy@pageanchor{S\arabic{page}}%
   \title{Supplementary Information for \\ \papertitlestyle\@papertitle}%
   \date{}%
   \maketitle%
