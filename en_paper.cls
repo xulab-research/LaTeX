@@ -11,6 +11,21 @@
 % 英文断行/连字：提供英文断字规则、直引号弯引号等排版细节
 \RequirePackage[english]{babel}
 
+% T1 编码：newtxtext 字体需要 T1 编码才能正确取字形（该设置不会被 newtxtext 自动引入，必须显式声明）
+\RequirePackage[T1]{fontenc}
+
+% 正文西文字体（Times 风格）
+\RequirePackage[type1]{newtxtext}
+
+% 数学符号集合
+\RequirePackage{newtxmath}
+
+% 公式粗体
+\RequirePackage{bm}
+
+% 微观排版优化（字符边缘微调、字距微伸缩），newtxtext 不会自带此功能
+\RequirePackage{microtype}
+
 % 页边距
 \RequirePackage{geometry}
 \geometry{top=1.5cm,bottom=1.5cm,left=2cm,right=2cm}
@@ -66,12 +81,6 @@
 % 插图
 \RequirePackage{graphicx}
 
-% 数学符号集合
-\RequirePackage{newtxmath}
-
-% 公式粗体
-\RequirePackage{bm}
-
 % 图表标题样式：加粗编号 + 句点分隔（如 "Figure 1."）
 \RequirePackage{caption}
 \captionsetup{font=footnotesize, labelfont=bf, labelsep=period}
@@ -86,14 +95,14 @@
 \algrenewcommand\algorithmicrequire{\textbf{Input:}}
 \algrenewcommand\algorithmicensure{\textbf{Output:}}
 
+% 代码与文件树
+\RequirePackage{listings}
+\lstdefinestyle{tree}{basicstyle=\ttfamily\small,commentstyle=\ttfamily\scriptsize,morecomment=[l]{\#},columns=fullflexible,keepspaces=true,breaklines=true,showstringspaces=false}
+
 % 参考文献
 \RequirePackage{csquotes}
 \RequirePackage[style=numeric-comp,sorting=none,backend=biber]{biblatex}
 \addbibresource{references.bib}
-
-% 代码与文件树
-\RequirePackage{listings}
-\lstdefinestyle{tree}{basicstyle=\ttfamily\small,commentstyle=\ttfamily\scriptsize,morecomment=[l]{\#},columns=fullflexible,keepspaces=true,breaklines=true,showstringspaces=false}
 
 % 双标题页（正文 + SI，均含作者与单位）机制的必要依赖，而且需要放在 authblk 前
 \RequirePackage{titling}
@@ -143,16 +152,8 @@
   \renewcommand{\theHfigure}{S\arabic{figure}}%
   \renewcommand{\theHtable}{S\arabic{table}}%
   \renewcommand{\theHequation}{S\arabic{equation}}%
+  \renewcommand{\theHpage}{S\arabic{page}}%
   \title{Supplementary Information for \\ \papertitlestyle\@papertitle}%
   \date{}%
   \maketitle%
 }
-
-% T1 编码：newtxtext 字体需要 T1 编码才能正确取字形（该设置不会被 newtxtext 自动引入，必须显式声明）
-\RequirePackage[T1]{fontenc}
-
-% 正文西文字体（Times 风格）
-\RequirePackage[type1]{newtxtext}
-
-% 微观排版优化（字符边缘微调、字距微伸缩），newtxtext 不会自带此功能
-\RequirePackage{microtype}

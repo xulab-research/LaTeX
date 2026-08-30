@@ -11,6 +11,19 @@
 % 英文断行/连字：提供英文断字规则、直引号弯引号等排版细节
 \RequirePackage[english]{babel}
 
+% 设置字体
+\setCJKmainfont{Noto Serif CJK SC}
+\setCJKsansfont{Noto Sans CJK SC}
+\setCJKmonofont{Consolas}
+\setmainfont{TeX Gyre Termes}
+\setsansfont{TeX Gyre Heros}
+\setmonofont{Consolas}
+\setmathfont{TeX Gyre Termes Math}
+
+% 数学符号集合
+\RequirePackage{unicode-math}
+
+
 % 一级标题靠左
 \ctexset{section={format+=\raggedright}}
 
@@ -69,9 +82,6 @@
 % 插图
 \RequirePackage{graphicx}
 
-% 数学符号集合
-\RequirePackage{unicode-math}
-
 % 图表标题样式：加粗编号 + 句点分隔（如 "Figure 1."）
 \RequirePackage{caption}
 \captionsetup{font=footnotesize, labelfont=bf, labelsep=period}
@@ -86,14 +96,14 @@
 \algrenewcommand\algorithmicrequire{\textbf{Input:}}
 \algrenewcommand\algorithmicensure{\textbf{Output:}}
 
+% 代码与文件树
+\RequirePackage{listings}
+\lstdefinestyle{tree}{basicstyle=\ttfamily\small,commentstyle=\ttfamily\scriptsize,morecomment=[l]{\#},columns=fullflexible,keepspaces=true,breaklines=true,showstringspaces=false}
+
 % 参考文献
 \RequirePackage{csquotes}
 \RequirePackage[style=numeric-comp,sorting=none,backend=biber]{biblatex}
 \addbibresource{references.bib}
-
-% 代码与文件树
-\RequirePackage{listings}
-\lstdefinestyle{tree}{basicstyle=\ttfamily\small,commentstyle=\ttfamily\scriptsize,morecomment=[l]{\#},columns=fullflexible,keepspaces=true,breaklines=true,showstringspaces=false}
 
 % 双标题页（正文 + SI，均含作者与单位）机制的必要依赖，而且需要放在 authblk 前
 \RequirePackage{titling}
@@ -143,16 +153,8 @@
   \renewcommand{\theHfigure}{S\arabic{figure}}%
   \renewcommand{\theHtable}{S\arabic{table}}%
   \renewcommand{\theHequation}{S\arabic{equation}}%
+  \renewcommand{\theHpage}{S\arabic{page}}%
   \title{Supplementary Information for \\ \papertitlestyle\@papertitle}%
   \date{}%
   \maketitle%
 }
-
-% 设置字体
-\setCJKmainfont{Noto Serif CJK SC}
-\setCJKsansfont{Noto Sans CJK SC}
-\setCJKmonofont{Consolas}
-\setmainfont{TeX Gyre Termes}
-\setsansfont{TeX Gyre Heros}
-\setmonofont{Consolas}
-\setmathfont{TeX Gyre Termes Math}
