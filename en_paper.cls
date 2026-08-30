@@ -17,6 +17,9 @@
 % 正文西文字体（Times 风格）
 \RequirePackage[type1]{newtxtext}
 
+% 等宽字体：Consolas 风格（自动应用于 \code{}、listings、\texttt 等）
+\RequirePackage[scaled=0.95]{inconsolata}
+
 % 微观排版优化（字符边缘微调、字距微伸缩），newtxtext 不会自带此功能
 \RequirePackage{microtype}
 
@@ -90,7 +93,6 @@
 
 % 现代伪代码语法引擎
 \RequirePackage{algpseudocodex}
-\algcset{indentLine=true}
 
 % 输入/输出标签加粗
 \algrenewcommand\algorithmicrequire{\textbf{Input:}}
