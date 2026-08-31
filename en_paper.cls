@@ -143,7 +143,6 @@
   \setcounter{figure}{0}%
   \setcounter{table}{0}%
   \setcounter{equation}{0}%
-  \renewcommand{\thepage}{S\arabic{page}}%
   \renewcommand{\thesection}{S\arabic{section}}%
   \renewcommand{\thefigure}{S\arabic{figure}}%
   \renewcommand{\thetable}{S\arabic{table}}%
