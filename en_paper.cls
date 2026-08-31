@@ -40,9 +40,6 @@
 % 首行缩进
 \setlength{\parindent}{2em}
 
-% 第一段也缩进
-\RequirePackage{indentfirst}
-
 % 更少的过宽/过窄行
 \setlength{\emergencystretch}{2em}
 \setlength{\parskip}{0pt}
