@@ -30,8 +30,7 @@
 \RequirePackage{microtype}
 
 % 页边距
-\RequirePackage{geometry}
-\geometry{top=1.5cm,bottom=1.5cm,left=2cm,right=2cm}
+\RequirePackage[a4paper,top=1.5cm,bottom=1.5cm,left=2cm,right=2cm]{geometry}
 
 % 设置正文行距，且保证 caption、表格和脚注等依然保持紧凑的单倍行距
 \RequirePackage{setspace}
