@@ -58,7 +58,7 @@
 \newcommand{\senderEmail}{xyx@zuel.edu.cn}
 
 % 页眉/落款统一使用的小字号，集中定义一次，避免多处重复硬编码
-\newcommand{\letterheadfont}{\fontsize{8pt}{9pt}\selectfont}
+\newcommand{\letterheadfont}{\fontsize{10pt}{9pt}\selectfont}
 
 % 初始化推荐审稿人信息容器，供后续逐条追加
 \newcommand{\reviewers}{}
@@ -70,7 +70,7 @@
 \AtBeginDocument{
   \setlength{\parindent}{0pt}
   \begin{minipage}[t]{5cm}
-    \vspace{-6pt}
+    \vspace{-0.2cm}
     \includegraphics[width=\linewidth]{logo.png}
   \end{minipage}
   \hfill
@@ -82,15 +82,14 @@
     \senderSchool \\
   \end{minipage}
   \hfill
-  \begin{minipage}[t]{5cm}
+  \begin{minipage}[t]{6.2cm}
     \letterheadfont
     \senderBuilding \\
     \senderUniversity \\
     \senderAddress \\
     Email: \href{mailto:\senderEmail}{\nolinkurl{\senderEmail}} \\
   \end{minipage}
-  \par
-  \rule{\linewidth}{1pt}
+  \rule{\linewidth}{2pt}
 }
 
 % 推荐审稿人
