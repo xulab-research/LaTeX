@@ -1,7 +1,7 @@
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesClass{cover_letter}[Cover Letter Template]
 
-% 不允许向 cover_letter 传递任何参数
+% 不允许传递任何参数
 \DeclareOption*{%
   \ClassWarning{cover_letter}{Option `\CurrentOption' is not allowed and will be ignored}%
 }

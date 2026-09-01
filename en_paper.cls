@@ -1,7 +1,7 @@
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesClass{en_paper}[English Academic Paper Template]
 
-% 不允许向 en_paper 传递任何参数
+% 不允许传递任何参数
 \DeclareOption*{%
   \ClassWarning{en_paper}{Option `\CurrentOption' is not allowed and will be ignored}%
 }
@@ -82,7 +82,7 @@
 
 % 图表标题样式：加粗编号 + 句点分隔（如 "Figure 1."）
 \RequirePackage{caption}
-\captionsetup{font=footnotesize, labelfont=bf, labelsep=period}
+\captionsetup{font=footnotesize,labelfont=bf,labelsep=period}
 
 % 提供 algorithm 浮动体环境
 \RequirePackage{algorithm}
@@ -133,6 +133,26 @@
 % 代码/文件名等标识符：\code{...}
 \newcommand{\code}[1]{\nolinkurl{#1}}
 
+% refcount 提供 \getrefnumber{label}，可以在不产生超链接副作用的情况下单独取出某个 \label 对应的编号文本（比如 "3" 或 "S3"）
+\RequirePackage{refcount}
+
+% xstring 提供 \IfBeginWith，用来判断上面取出的编号文本是不是以 S 开头
+\RequirePackage{xstring}
+
+% 统一交叉引用命令：\xref{label}，cleveref 会根据 label 实际绑定的计数器类型（section/figure/table/equation/algorithm）自动判断该用哪个类型
+\RequirePackage[capitalize,nameinlink,noabbrev]{cleveref}
+\crefname{figure}{Fig}{Figs}
+\Crefname{figure}{Fig}{Figs}
+\crefname{table}{Table}{Tables}
+\Crefname{table}{Table}{Tables}
+\crefname{equation}{Equation}{Equations}
+\Crefname{equation}{Equation}{Equations}
+\crefname{algorithm}{Algorithm}{Algorithms}
+\Crefname{algorithm}{Algorithm}{Algorithms}
+\crefname{section}{Section}{Sections}
+\Crefname{section}{Section}{Sections}
+\newcommand{\xref}[1]{\IfBeginWith{\getrefnumber{#1}}{S}{Supplementary~}{}\cref{#1}}
+
 % SI 标题页：复位计数器、启用 S 前缀编号、开启独立参考文献分区(refsection)，并用 \papertitle 记录的标题生成 SI 标题，SI 标题页与正文标题页样式一致、且包含全部作者与单位信息
 \newcommand{\makesititle}{%
   \newrefsection%
@@ -143,14 +163,17 @@
   \setcounter{figure}{0}%
   \setcounter{table}{0}%
   \setcounter{equation}{0}%
+  \setcounter{algorithm}{0}%
   \renewcommand{\thesection}{S\arabic{section}}%
   \renewcommand{\thefigure}{S\arabic{figure}}%
   \renewcommand{\thetable}{S\arabic{table}}%
   \renewcommand{\theequation}{S\arabic{equation}}%
+  \renewcommand{\thealgorithm}{S\arabic{algorithm}}%
   \renewcommand{\theHsection}{S\arabic{section}}%
   \renewcommand{\theHfigure}{S\arabic{figure}}%
   \renewcommand{\theHtable}{S\arabic{table}}%
   \renewcommand{\theHequation}{S\arabic{equation}}%
+  \renewcommand{\theHalgorithm}{S\arabic{algorithm}}%
   \title{Supplementary Information for \\ \papertitlestyle\@papertitle}%
   \date{}%
   \maketitle%

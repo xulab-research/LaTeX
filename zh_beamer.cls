@@ -1,7 +1,7 @@
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesClass{zh_beamer}[Chinese Academic Beamer Template]
 
-% 不允许向 zh_beamer 传递任何参数
+% 不允许传递任何参数
 \DeclareOption*{%
   \ClassWarning{zh_beamer}{Option `\CurrentOption' is not allowed and will be ignored}%
 }
