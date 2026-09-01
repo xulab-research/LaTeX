@@ -137,6 +137,12 @@
 % 代码/文件名等标识符：\code{...}
 \newcommand{\code}[1]{\nolinkurl{#1}}
 
+% refcount 提供 \getrefnumber{label}，可以在不产生超链接副作用的情况下单独取出某个 \label 对应的编号文本（比如 "3" 或 "S3"）
+\RequirePackage{refcount}
+
+% xstring 提供 \IfBeginWith，用来判断上面取出的编号文本是不是以 S 开头
+\RequirePackage{xstring}
+
 % 统一交叉引用命令：\xref{label}，cleveref 会根据 label 实际绑定的计数器类型（section/figure/table/equation/algorithm）自动判断该用哪个类型
 \RequirePackage[capitalize,nameinlink,noabbrev]{cleveref}
 \crefname{figure}{Fig}{Figs}
