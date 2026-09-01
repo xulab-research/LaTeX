@@ -98,6 +98,21 @@
 \algrenewcommand\algorithmicrequire{\textbf{Input:}}
 \algrenewcommand\algorithmicensure{\textbf{Output:}}
 
+% 颜色支持（提供算法代码染色）
+\RequirePackage[dvipsnames]{xcolor}
+\definecolor{AlgoGreen}{HTML}{008000}
+\definecolor{AlgoDarkRed}{HTML}{8B0000}
+\definecolor{AlgoBlue}{HTML}{0066CC}
+
+% 自定义算法表格排版与高亮命令
+\newcommand{\AlgoDef}[1]{\multicolumn{3}{@{}l@{}}{\textcolor{AlgoGreen}{\textbf{def}}\ #1} \\}
+\newcommand{\AlgoComment}[1]{\multicolumn{3}{@{}l@{}}{\textcolor{AlgoDarkRed}{\texttt{\#}\ \textit{#1}}} \\}
+\newcommand{\AlgoRow}[3]{#1: & #2 & #3 \\}
+\newcommand{\AlgoCont}[2]{& #1 & #2 \\}
+\newcommand{\AlgoLink}[2]{\hyperref[#1]{\textcolor{AlgoBlue}{\underline{#2}}}}
+\newcommand{\AlgoReturn}{\textcolor{AlgoGreen}{\textbf{return}}}
+\newcommand{\AlgoKeyword}[1]{\textcolor{AlgoGreen}{\textbf{#1}}}
+
 % 代码与文件树
 \RequirePackage{listings}
 \lstdefinestyle{tree}{basicstyle=\ttfamily\small,commentstyle=\ttfamily\scriptsize,morecomment=[l]{\#},columns=fullflexible,keepspaces=true,breaklines=true,showstringspaces=false}
