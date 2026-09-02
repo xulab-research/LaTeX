@@ -11,21 +11,28 @@
 % 英文断行/连字：提供英文断字规则、直引号弯引号等排版细节
 \RequirePackage[english]{babel}
 
-% 中文字体设置 (开启 AutoFakeSlant 避免缺失独立斜体文件警告)
-\setCJKmainfont{Noto Serif CJK SC}[AutoFakeSlant]
-\setCJKsansfont{Noto Sans CJK SC}[AutoFakeSlant]
-\setCJKmonofont{Noto Sans Mono CJK SC}[AutoFakeSlant]
+% T1 编码：newtxtext 字体需要 T1 编码才能正确取字形（该设置不会被 newtxtext 自动引入，必须显式声明）
+\RequirePackage[T1]{fontenc}
 
-% 西文字体设置
-\setmainfont{TeX Gyre Termes}
-\setsansfont{TeX Gyre Heros}
-\setmonofont{Consolas}[Scale=MatchLowercase]
+% 西文正文字体（Times 风格）
+\RequirePackage[type1]{newtxtext}
+
+% 补全完整粗体支持的 Consolas 风格等宽字体
+\RequirePackage[scaled=0.95]{inconsolata}
 
 % 数学符号集合
 \RequirePackage{newtxmath}
 
 % 公式粗体
 \RequirePackage{bm}
+
+% 微观排版优化（字符边缘微调、字距微伸缩），newtxtext 不会自带此功能
+\RequirePackage{microtype}
+
+% 中文字体设置 (开启 AutoFakeSlant 避免缺失独立斜体文件警告)
+\setCJKmainfont{Noto Serif CJK SC}[AutoFakeSlant]
+\setCJKsansfont{Noto Sans CJK SC}[AutoFakeSlant]
+\setCJKmonofont{Noto Sans Mono CJK SC}[AutoFakeSlant]
 
 % 优化中西文混排断行与字距弹性，消除 Underfull \hbox
 \xeCJKsetup{CJKecglue=\hspace{0.25em plus 0.15em minus 0.05em}}

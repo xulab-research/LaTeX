@@ -14,7 +14,7 @@
 % T1 编码：newtxtext 字体需要 T1 编码才能正确取字形（该设置不会被 newtxtext 自动引入，必须显式声明）
 \RequirePackage[T1]{fontenc}
 
-% 正文西文字体（Times 风格）
+% 西文正文字体（Times 风格）
 \RequirePackage[type1]{newtxtext}
 
 % 补全完整粗体支持的 Consolas 风格等宽字体
