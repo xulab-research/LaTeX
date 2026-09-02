@@ -98,8 +98,7 @@
 \algrenewcommand\algorithmicrequire{\textbf{Input:}}
 \algrenewcommand\algorithmicensure{\textbf{Output:}}
 
-% 颜色支持（提供算法代码染色）
-\RequirePackage[dvipsnames]{xcolor}
+% 自定义颜色
 \definecolor{AlgoGreen}{HTML}{008000}
 \definecolor{AlgoDarkRed}{HTML}{8B0000}
 \definecolor{AlgoBlue}{HTML}{0066CC}
