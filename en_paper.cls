@@ -123,6 +123,9 @@
 \renewcommand{\Authfont}{\fontsize{12pt}{14pt}\selectfont\bfseries}
 \renewcommand{\Affilfont}{\fontsize{10pt}{12pt}\selectfont\normalfont}
 
+% 局部目录控制：支持在 SI 处仅提取 SI 内部小节的独立目录，不污染正文
+\RequirePackage{etoc}
+
 % 交叉引用与超链接
 \RequirePackage{hyperref}
 \hypersetup{colorlinks=true,linkcolor=red,citecolor=blue,urlcolor=blue}
@@ -191,4 +194,11 @@
   \title{Supplementary Information for \\ \papertitlestyle\@papertitle}%
   \date{}%
   \maketitle%
+  \begingroup%
+    \etocsettocdepth{2}%
+    \etocobeytoctocdepth%
+    \hypersetup{linkcolor=black}%
+    \tableofcontents%
+  \endgroup%
+  \hypersetup{linkcolor=red}%
 }
