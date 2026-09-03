@@ -55,7 +55,6 @@ ItalicFont={Arial Italic}, BoldItalicFont={Arial Bold Italic}]{Arial.ttf}
 \RequirePackage{tabularray}
 \UseTblrLibrary{booktabs}
 
-
 % 彩色盒子
 \RequirePackage{tcolorbox}
 
