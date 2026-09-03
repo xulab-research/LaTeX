@@ -14,6 +14,9 @@
 % 英文断行/连字：提供英文断字规则、直引号弯引号等排版细节
 \RequirePackage[english]{babel}
 
+% 数学字体主题
+\usefonttheme[onlymath]{serif}
+
 % 数学符号集合
 \RequirePackage{unicode-math}
 
@@ -35,8 +38,26 @@ ItalicFont={Arial Italic}, BoldItalicFont={Arial Bold Italic}]{Arial.ttf}
 
 % 三线表
 \RequirePackage{booktabs}
+
+% 表格自动适配列宽 X 列
+\RequirePackage{tabularx}
+
+% 单元格纵向合并跨行
+\RequirePackage{multirow}
+
+% 单元格内多行文字
+\RequirePackage{makecell}
+
+% 表格底部注脚与注释规范排版
+\RequirePackage{threeparttable}
+
+% 现代表格排版引擎，与经典表格并存，支持标准的 booktabs 线条
+\RequirePackage{tabularray}
+\UseTblrLibrary{booktabs}
+
+
+% 彩色盒子
 \RequirePackage{tcolorbox}
-\RequirePackage{lmodern}
 
 % 主题与样式配置
 \usetheme[colortheme=paper]{moloch}
@@ -45,7 +66,6 @@ ItalicFont={Arial Italic}, BoldItalicFont={Arial Bold Italic}]{Arial.ttf}
   light/progressbar fg=orange
 }
 \setbeamertemplate{page number in head/foot}[appendixframenumber]
-\usefonttheme[onlymath]{serif}
 
 % 颜色定义（蓝 / 红配色，用于自定义 tcolorbox）
 \definecolor{CustomBlue}{HTML}{4097E2}
