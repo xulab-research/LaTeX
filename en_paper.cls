@@ -199,10 +199,16 @@
   \maketitle%
   \etocdepthtag.toc{si}%
   \begingroup%
-    \etocsettocdepth{2}%
-    \etocobeytoctocdepth%
-    \hypersetup{linkcolor=black}%
-    \tableofcontents%
+  \etocsettocdepth{subsection}%
+  \etocsettagdepth{main}{none}%
+  \etocsettagdepth{si}{subsection}%
+  \etocobeytoctocdepth%
+  \hypersetup{linkcolor=black}%
+  \makeatletter%
+  \renewcommand*\l@section{\@dottedtocline{1}{0em}{1.8em}}%
+  \renewcommand*\l@subsection{\@dottedtocline{2}{2em}{2.8em}}%
+  \makeatother%
+  \tableofcontents%
   \endgroup%
   \hypersetup{linkcolor=red}%
 }

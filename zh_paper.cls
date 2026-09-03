@@ -1,5 +1,5 @@
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{zh_paper}[中文论文]
+\ProvidesClass{zh_paper}[Chinese Academic Paper Template]
 
 % 不允许传递任何参数
 \DeclareOption*{%
@@ -130,6 +130,9 @@
 % 局部目录控制：支持在 SI 处仅提取 SI 内部小节的独立目录，不污染正文
 \RequirePackage{etoc}
 
+% 标记正文区域的起点
+\AtBeginDocument{\etocdepthtag.toc{main}}
+
 % 交叉引用与超链接
 \RequirePackage{hyperref}
 \hypersetup{colorlinks=true,linkcolor=red,citecolor=blue,urlcolor=blue}
@@ -198,11 +201,18 @@
   \title{Supplementary Information for \\ \papertitlestyle\@papertitle}%
   \date{}%
   \maketitle%
+  \etocdepthtag.toc{si}%
   \begingroup%
-    \etocsettocdepth{2}%
-    \etocobeytoctocdepth%
-    \hypersetup{linkcolor=black}%
-    \tableofcontents%
+  \etocsettocdepth{subsection}%
+  \etocsettagdepth{main}{none}%
+  \etocsettagdepth{si}{subsection}%
+  \etocobeytoctocdepth%
+  \hypersetup{linkcolor=black}%
+  \makeatletter%
+  \renewcommand*\l@section{\@dottedtocline{1}{0em}{1.8em}}%
+  \renewcommand*\l@subsection{\@dottedtocline{2}{2em}{2.8em}}%
+  \makeatother%
+  \tableofcontents%
   \endgroup%
   \hypersetup{linkcolor=red}%
 }

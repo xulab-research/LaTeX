@@ -10,9 +10,12 @@
 
 % 基础宏包
 \RequirePackage[heading=false,fontset=none]{ctex}
-\RequirePackage{booktabs}
-\RequirePackage{tcolorbox}
-\RequirePackage{lmodern}
+
+% 英文断行/连字：提供英文断字规则、直引号弯引号等排版细节
+\RequirePackage[english]{babel}
+
+% 数学符号集合
+\RequirePackage{unicode-math}
 
 % 字体配置（按需修改 fonts/ 路径）
 \setCJKmainfont[Path=fonts/, UprightFont=*, BoldFont=msyhbd,
@@ -23,6 +26,17 @@ ItalicFont=msyhl]{msyh.ttc}
 ItalicFont=msyhl]{msyh.ttc}
 \setsansfont[Path=fonts/, UprightFont=*, BoldFont={Arial Bold},
 ItalicFont={Arial Italic}, BoldItalicFont={Arial Bold Italic}]{Arial.ttf}
+
+% 数学字体设置
+\setmathfont{TeX Gyre Termes Math}
+
+% 优化中西文混排断行与字距弹性，消除 Underfull \hbox
+\xeCJKsetup{CJKecglue=\hspace{0.25em plus 0.15em minus 0.05em}}
+
+% 三线表
+\RequirePackage{booktabs}
+\RequirePackage{tcolorbox}
+\RequirePackage{lmodern}
 
 % 主题与样式配置
 \usetheme[colortheme=paper]{moloch}
