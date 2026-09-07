@@ -4,23 +4,17 @@ A collection of lightweight LaTeX class templates for academic writing and prese
 
 ## Included Templates
 
-- `rebuttal.cls` — Rebuttal Template.
-- `cover_letter.cls` — Cover Letter Template.
-- `zh_paper.cls` — Chinese Academic Paper Template.
-- `zh_beamer.cls` — Chinese Academic Beamer Template.
-- `en_paper.cls` — English Academic Paper Template.
+- `rebuttal.cls` — Rebuttal `cls` File.
+- `cover_letter.cls` — Cover Letter `cls` File.
+- `zh_paper.cls` — Chinese Paper `cls` File.
+- `zh_beamer.cls` — Chinese Beamer `cls` File.
+- `en_paper.cls` — English Paper `cls` File.
 
 ## Usage
 
 1. Download or clone this repository.
 2. Place the required `.cls` file in your project directory.
 3. Use the corresponding document class in your `.tex` file.
-
-Example:
-
-```latex
-\documentclass{zh_paper}
-```
 
 ## License
 
