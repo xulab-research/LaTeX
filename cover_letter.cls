@@ -2,9 +2,7 @@
 \ProvidesClass{cover_letter}[Cover Letter]
 
 % 不允许传递任何参数
-\DeclareOption*{%
-  \ClassWarning{cover_letter}{Option `\CurrentOption' is not allowed and will be ignored}%
-}
+\DeclareOption*{\ClassWarning{cover_letter}{Option `\CurrentOption' is not allowed and will be ignored}}
 \ProcessOptions\relax
 \LoadClass[12pt,a4paper]{article}
 

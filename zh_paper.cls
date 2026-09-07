@@ -2,9 +2,7 @@
 \ProvidesClass{zh_paper}[Chinese Paper]
 
 % 不允许传递任何参数
-\DeclareOption*{%
-  \ClassWarning{zh_paper}{Option `\CurrentOption' is not allowed and will be ignored}%
-}
+\DeclareOption*{\ClassWarning{zh_paper}{Option `\CurrentOption' is not allowed and will be ignored}}
 \ProcessOptions\relax
 \LoadClass[12pt,a4paper,fontset=none]{ctexart}
 
@@ -149,10 +147,7 @@
 % 定义论文标题
 % 作用一：以 \papertitlestyle 样式生成正文标题页；
 % 作用二：把标题文本记录到 \@papertitle，供 SI 标题页自动复用
-\newcommand{\papertitle}[1]{%
-  \title{\papertitlestyle #1}%
-  \gdef\@papertitle{#1}%
-}
+\newcommand{\papertitle}[1]{\title{\papertitlestyle #1}\gdef\@papertitle{#1}}
 
 % 代码/文件名等标识符：\code{...}
 \newcommand{\code}[1]{\nolinkurl{#1}}
