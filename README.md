@@ -1,14 +1,22 @@
 # LaTeX
 
-A collection of lightweight LaTeX class templates for academic writing and presentations.
+A collection of lightweight LaTeX class templates for Xu Lab.
 
 ## Included Templates
+
+### Academic Writing
 
 - `rebuttal.cls` — Rebuttal `cls` File.
 - `cover_letter.cls` — Cover Letter `cls` File.
 - `zh_paper.cls` — Chinese Paper `cls` File.
 - `zh_beamer.cls` — Chinese Beamer `cls` File.
 - `en_paper.cls` — English Paper `cls` File.
+
+### Computer Software Copyright Registration
+
+- `document_identification_material.cls` — Document Identification Material `cls` File.
+- `program_identification_material.cls` — Program Identification Material `cls` File.
+- `co-development_contract.cls` — Co-development Contract `cls` File.
 
 ## Usage
 

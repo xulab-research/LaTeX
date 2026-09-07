@@ -28,7 +28,7 @@
 \RequirePackage{microtype}
 
 % 页边距
-\RequirePackage[a4paper,top=1.5cm,bottom=1.5cm,left=2cm,right=2cm]{geometry}
+\RequirePackage[top=1.5cm,bottom=1.5cm,left=2cm,right=2cm]{geometry}
 
 % 设置正文行距，且保证 caption、表格和脚注等依然保持紧凑的单倍行距
 \RequirePackage{setspace}
@@ -144,9 +144,6 @@
 % 作用一：以 \papertitlestyle 样式生成正文标题页；
 % 作用二：把标题文本记录到 \@papertitle，供 SI 标题页自动复用
 \newcommand{\papertitle}[1]{\title{\papertitlestyle #1}\gdef\@papertitle{#1}}
-
-% 代码/文件名等标识符：\code{...}
-\newcommand{\code}[1]{\nolinkurl{#1}}
 
 % refcount 提供 \getrefnumber{label}，可以在不产生超链接副作用的情况下单独取出某个 \label 对应的编号文本（比如 "3" 或 "S3"）
 \RequirePackage{refcount}

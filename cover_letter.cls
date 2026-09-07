@@ -22,7 +22,7 @@
 \RequirePackage{microtype}
 
 % 页边距
-\RequirePackage[a4paper,top=1cm,bottom=2cm,left=2cm,right=2cm]{geometry}
+\RequirePackage[top=1cm,bottom=2cm,left=2cm,right=2cm]{geometry}
 
 % 设置正文行距，且保证 caption、表格和脚注等依然保持紧凑的单倍行距
 \RequirePackage{setspace}

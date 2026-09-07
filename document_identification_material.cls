@@ -1,5 +1,5 @@
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{zh_paper}[Chinese Paper]
+\ProvidesClass{document_identification_material}[Document Identification Material]
 
 % 不允许传递任何参数
 \DeclareOption*{\ClassWarning{zh_paper}{Option `\CurrentOption' is not allowed and will be ignored}}
@@ -32,7 +32,7 @@
 \ctexset{section={format+=\raggedright}}
 
 % 页边距
-\RequirePackage[top=1.5cm,bottom=1.5cm,left=2cm,right=2cm]{geometry}
+\RequirePackage[top=2cm,bottom=2cm,left=2cm,right=2cm,headheight=15pt]{geometry}
 
 % 设置正文行距，且保证 caption、表格和脚注等依然保持紧凑的单倍行距
 \RequirePackage{setspace}
@@ -48,8 +48,8 @@
 % 不显示日期
 \date{}
 
-% 页码样式
-\AtBeginDocument{\pagestyle{plain}}
+% 定义页眉和页脚所需要的包
+\RequirePackage{fancyhdr}
 
 % 三线表
 \RequirePackage{booktabs}
@@ -86,50 +86,9 @@
 \RequirePackage{caption}
 \captionsetup{font=footnotesize,labelfont=bf,labelsep=period}
 
-% 提供 algorithm 浮动体环境
-\RequirePackage{algorithm}
-
-% 现代伪代码语法引擎
-\RequirePackage{algpseudocodex}
-
-% 输入/输出标签加粗
-\algrenewcommand\algorithmicrequire{\textbf{Input:}}
-\algrenewcommand\algorithmicensure{\textbf{Output:}}
-
-% 自定义颜色
-\definecolor{AlgoGreen}{HTML}{008000}
-\definecolor{AlgoDarkRed}{HTML}{8B0000}
-\definecolor{AlgoBlue}{HTML}{0066CC}
-
-% 自定义算法表格排版与高亮命令
-\newcommand{\AlgoDef}[1]{\multicolumn{3}{@{}l@{}}{\textcolor{AlgoGreen}{\textbf{def}}\ #1} \\}
-\newcommand{\AlgoComment}[1]{\multicolumn{3}{@{}l@{}}{\textcolor{AlgoDarkRed}{\texttt{\#}\ \textit{#1}}} \\}
-\newcommand{\AlgoRow}[3]{#1: & #2 & #3 \\}
-\newcommand{\AlgoCont}[2]{& #1 & #2 \\}
-\newcommand{\AlgoLink}[2]{\hyperref[#1]{\textcolor{AlgoBlue}{\underline{#2}}}}
-\newcommand{\AlgoReturn}{\textcolor{AlgoGreen}{\textbf{return}}}
-\newcommand{\AlgoKeyword}[1]{\textcolor{AlgoGreen}{\textbf{#1}}}
-
 % 代码与文件树
 \RequirePackage{listings}
 \lstdefinestyle{tree}{basicstyle=\ttfamily\small,commentstyle=\ttfamily\scriptsize,morecomment=[l]{\#},columns=fullflexible,keepspaces=true,breaklines=true,showstringspaces=false}
-
-% 参考文献
-\RequirePackage{csquotes}
-\RequirePackage[style=numeric-comp,sorting=none,backend=biber]{biblatex}
-\addbibresource{references.bib}
-
-% 双标题页（正文 + SI，均含作者与单位）机制的必要依赖，而且需要放在 authblk 前
-\RequirePackage{titling}
-\RequirePackage{authblk}
-\renewcommand{\Authfont}{\fontsize{12pt}{14pt}\selectfont\bfseries}
-\renewcommand{\Affilfont}{\fontsize{10pt}{12pt}\selectfont\normalfont}
-
-% 局部目录控制：支持在 SI 处仅提取 SI 内部小节的独立目录，不污染正文
-\RequirePackage{etoc}
-
-% 标记正文区域的起点
-\AtBeginDocument{\etocdepthtag.toc{main}}
 
 % 交叉引用与超链接
 \RequirePackage{hyperref}
@@ -138,16 +97,8 @@
 % 链接行末自动换行
 \RequirePackage{xurl}
 
-% ORCID（需在 hyperref 之后加载）
-\RequirePackage{orcidlink}
-
 % 标题样式
 \newcommand{\papertitlestyle}{\sffamily\bfseries\zihao{2}}
-
-% 定义论文标题
-% 作用一：以 \papertitlestyle 样式生成正文标题页；
-% 作用二：把标题文本记录到 \@papertitle，供 SI 标题页自动复用
-\newcommand{\papertitle}[1]{\title{\papertitlestyle #1}\gdef\@papertitle{#1}}
 
 % refcount 提供 \getrefnumber{label}，可以在不产生超链接副作用的情况下单独取出某个 \label 对应的编号文本（比如 "3" 或 "S3"）
 \RequirePackage{refcount}
@@ -169,42 +120,59 @@
 \Crefname{section}{Section}{Sections}
 \newcommand{\xref}[1]{\IfBeginWith{\getrefnumber{#1}}{S}{Supplementary~}{}\cref{#1}}
 
-% SI 标题页：复位计数器、启用 S 前缀编号、开启独立参考文献分区(refsection)，并用 \papertitle 记录的标题生成 SI 标题，SI 标题页与正文标题页样式一致、且包含全部作者与单位信息
-\newcommand{\makesititle}{%
-  \newrefsection%
+% 文档元数据
+\newcommand{\DocumentSoftware}{待填写}
+\newcommand{\DocumentVersion}{V1.0}
+\newcommand{\DocumentTitle}{用户操作手册}
+\newcommand{\DocumentAuthor}{待填写}
+\newcommand{\DocumentOwner}{待填写}
+\newcommand{\DocumentCreated}{待填写}
+\newcommand{\DocumentUpdated}{待填写}
+
+% 自定义页眉、页脚样式
+\pagestyle{fancy}
+
+% 清空页眉页脚
+\fancyhf{}
+
+% 页眉左侧设置软件名 + 版本号 + 标题名称
+\fancyhead[L]{\fontsize{10pt}{14pt}\selectfont\bfseries\DocumentSoftware\enspace\DocumentVersion\quad\DocumentTitle}
+
+% 页眉右侧设置页码
+\fancyhead[R]{\fontsize{10pt}{14pt}\selectfont\bfseries\thepage}
+
+% 封面
+\renewcommand{\maketitle}{%
+  \thispagestyle{empty}%
+  \vspace*{4cm}%
+  {\centering\bfseries\fontsize{24pt}{36pt}\selectfont\DocumentSoftware\enspace\DocumentVersion\par\DocumentTitle\par}%
+  \vfill\noindent%
+  \begin{tblr}{colspec={X[3,l] X[7,l]},hlines,vlines}%
+    文档版本 & V1.0 \\
+    文档状态 & 正式版 \\
+    作\qquad 者 & \DocumentAuthor \\
+    负\, 责\, 人 & \DocumentOwner \\
+    创建日期 & \DocumentCreated \\
+    更新日期 & \DocumentUpdated \\
+  \end{tblr}%
   \clearpage%
-  \setcounter{page}{1}%
-  \setcounter{section}{0}%
-  \setcounter{subsection}{0}%
-  \setcounter{figure}{0}%
-  \setcounter{table}{0}%
-  \setcounter{equation}{0}%
-  \setcounter{algorithm}{0}%
-  \renewcommand{\thesection}{S\arabic{section}}%
-  \renewcommand{\thefigure}{S\arabic{figure}}%
-  \renewcommand{\thetable}{S\arabic{table}}%
-  \renewcommand{\theequation}{S\arabic{equation}}%
-  \renewcommand{\thealgorithm}{S\arabic{algorithm}}%
-  \renewcommand{\theHsection}{S\arabic{section}}%
-  \renewcommand{\theHfigure}{S\arabic{figure}}%
-  \renewcommand{\theHtable}{S\arabic{table}}%
-  \renewcommand{\theHequation}{S\arabic{equation}}%
-  \renewcommand{\theHalgorithm}{S\arabic{algorithm}}%
-  \title{Supplementary Information for \\ \papertitlestyle\@papertitle}%
-  \date{}%
-  \maketitle%
-  \etocdepthtag.toc{si}%
+}
+
+% 修订历史
+\NewDocumentEnvironment{RevisionHistory}{+b}{%
+  \pagenumbering{Roman}%
+  \section*{修订历史}%
+  \noindent%
+  \begin{tblr}{colspec={X[24,c] X[12,c] X[20,c] X[40,c]},hlines,vlines}
+    \textbf{日期} & \textbf{版本} & \textbf{修改者} & \textbf{描述} \\
+    #1
+  \end{tblr}%
+  \clearpage%
   \begingroup%
-  \etocsettocdepth{subsection}%
-  \etocsettagdepth{main}{none}%
-  \etocsettagdepth{si}{subsection}%
-  \etocobeytoctocdepth%
   \hypersetup{linkcolor=black}%
-  \makeatletter%
-  \renewcommand*\l@section{\@dottedtocline{1}{0em}{1.8em}}%
-  \renewcommand*\l@subsection{\@dottedtocline{2}{2em}{2.8em}}%
-  \makeatother%
   \tableofcontents%
   \endgroup%
-  \hypersetup{linkcolor=red}%
-}
+  \clearpage%
+  \pagenumbering{arabic}%
+  \setcounter{page}{1}%
+}{}
