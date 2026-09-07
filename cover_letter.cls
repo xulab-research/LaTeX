@@ -1,5 +1,5 @@
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{cover_letter}[Cover Letter Template]
+\ProvidesClass{cover_letter}[Cover Letter]
 
 % 不允许传递任何参数
 \DeclareOption*{%

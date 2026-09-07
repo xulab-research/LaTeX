@@ -1,5 +1,5 @@
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{zh_paper}[Chinese Academic Paper Template]
+\ProvidesClass{zh_paper}[Chinese Paper]
 
 % 不允许传递任何参数
 \DeclareOption*{%
