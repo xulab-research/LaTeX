@@ -17,6 +17,7 @@ A collection of lightweight LaTeX class templates for Xu Lab.
 - `document_identification_material.cls` — Document Identification Material `cls` File.
 - `program_identification_material.cls` — Program Identification Material `cls` File.
 - `co-development_contract.cls` — Co-development Contract `cls` File.
+- `merge_python_code.py` - Merge All Python Code in `code.py` File.
 
 ## Usage
 
