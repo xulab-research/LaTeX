@@ -27,9 +27,6 @@
 % 数学字体设置
 \setmathfont{TeX Gyre Termes Math}
 
-% 优化中西文混排断行与字距弹性，消除 Underfull \hbox
-\xeCJKsetup{CJKecglue=\hspace{0.25em plus 0.15em minus 0.05em}}
-
 % 三线表
 \RequirePackage{booktabs}
 

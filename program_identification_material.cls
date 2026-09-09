@@ -49,9 +49,9 @@
 \lstdefinestyle{tree}{basicstyle=\ttfamily\small,commentstyle=\ttfamily\scriptsize,morecomment=[l]{\#},columns=fullflexible,keepspaces=true,breaklines=true,showstringspaces=false}
 
 % 文档元数据
-\newcommand{\DocumentSoftware}{待填写}
-\newcommand{\DocumentVersion}{V1.0}
-\newcommand{\DocumentOwner}{待填写}
+\newcommand{\Software}{待填写}
+\newcommand{\Version}{V1.0}
+\newcommand{\Owner}{待填写}
 
 % 自定义页眉、页脚样式
 \pagestyle{fancy}
@@ -60,7 +60,7 @@
 \fancyhf{}
 
 % 页眉左侧设置软件名 + 版本号
-\fancyhead[L]{\fontsize{10pt}{14pt}\selectfont\bfseries\DocumentSoftware\enspace\DocumentVersion}
+\fancyhead[L]{\fontsize{10pt}{14pt}\selectfont\bfseries\Software\enspace\Version}
 
 % 页眉右侧设置页码
 \fancyhead[R]{\fontsize{10pt}{14pt}\selectfont\bfseries\thepage}

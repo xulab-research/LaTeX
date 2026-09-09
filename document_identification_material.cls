@@ -25,9 +25,6 @@
 % 数学字体设置
 \setmathfont{TeX Gyre Termes Math}
 
-% 优化中西文混排断行与字距弹性，消除 Underfull \hbox
-\xeCJKsetup{CJKecglue=\hspace{0.25em plus 0.15em minus 0.05em}}
-
 % 一级标题靠左
 \ctexset{section={format+=\raggedright}}
 
@@ -121,13 +118,13 @@
 \newcommand{\xref}[1]{\IfBeginWith{\getrefnumber{#1}}{S}{Supplementary~}{}\cref{#1}}
 
 % 文档元数据
-\newcommand{\DocumentSoftware}{待填写}
-\newcommand{\DocumentVersion}{V1.0}
-\newcommand{\DocumentTitle}{用户操作手册}
-\newcommand{\DocumentAuthor}{待填写}
-\newcommand{\DocumentOwner}{待填写}
-\newcommand{\DocumentCreated}{待填写}
-\newcommand{\DocumentUpdated}{待填写}
+\newcommand{\Software}{待填写}
+\newcommand{\Version}{V1.0}
+\newcommand{\Title}{用户操作手册}
+\newcommand{\Author}{待填写}
+\newcommand{\Owner}{待填写}
+\newcommand{\Created}{待填写}
+\newcommand{\Updated}{待填写}
 
 % 自定义页眉、页脚样式
 \pagestyle{fancy}
@@ -136,7 +133,7 @@
 \fancyhf{}
 
 % 页眉左侧设置软件名 + 版本号 + 标题名称
-\fancyhead[L]{\fontsize{10pt}{14pt}\selectfont\bfseries\DocumentSoftware\enspace\DocumentVersion\quad\DocumentTitle}
+\fancyhead[L]{\fontsize{10pt}{14pt}\selectfont\bfseries\Software\enspace\Version\quad\Title}
 
 % 页眉右侧设置页码
 \fancyhead[R]{\fontsize{10pt}{14pt}\selectfont\bfseries\thepage}
@@ -145,15 +142,15 @@
 \renewcommand{\maketitle}{%
   \thispagestyle{empty}%
   \vspace*{4cm}%
-  {\centering\bfseries\fontsize{24pt}{36pt}\selectfont\DocumentSoftware\enspace\DocumentVersion\par\DocumentTitle\par}%
+  {\centering\bfseries\fontsize{24pt}{36pt}\selectfont\Software\enspace\Version\par\Title\par}%
   \vfill\noindent%
   \begin{tblr}{colspec={X[3,l] X[7,l]},hlines,vlines}%
     文档版本 & V1.0 \\
     文档状态 & 正式版 \\
-    作\qquad 者 & \DocumentAuthor \\
-    负\, 责\, 人 & \DocumentOwner \\
-    创建日期 & \DocumentCreated \\
-    更新日期 & \DocumentUpdated \\
+    作\qquad 者 & \Author \\
+    负\, 责\, 人 & \Owner \\
+    创建日期 & \Created \\
+    更新日期 & \Updated \\
   \end{tblr}%
   \clearpage%
 }
