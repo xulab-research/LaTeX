@@ -46,6 +46,9 @@
 \RequirePackage{tabularray}
 \UseTblrLibrary{booktabs}
 
+% 彩色符号
+\usepackage{pifont}
+
 % 彩色盒子
 \RequirePackage{tcolorbox}
 
