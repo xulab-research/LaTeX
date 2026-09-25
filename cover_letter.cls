@@ -94,7 +94,7 @@
 \AtEndDocument{
   \begin{flushright}
     \setlength{\parskip}{0pt}
-    Sincerely yours,\\
+    Sincerely,\\
     \includegraphics[width=3.5cm]{signature.jpg} \\
     \senderName \\
     \senderTitle \\
