@@ -110,6 +110,9 @@
 \RequirePackage{listings}
 \lstdefinestyle{tree}{basicstyle=\ttfamily\small,commentstyle=\ttfamily\scriptsize,morecomment=[l]{\#},columns=fullflexible,keepspaces=true,breaklines=true,showstringspaces=false}
 
+% 行号
+\RequirePackage{lineno}
+
 % 参考文献
 \RequirePackage{csquotes}
 \RequirePackage[style=numeric-comp,sorting=none,backend=biber]{biblatex}
