@@ -29,7 +29,7 @@ def clean_source(path):
     return "".join(line for i, line in enumerate(lines, 1) if i not in removed and (line.strip() or i in string_lines))
 
 
-package = Path("main/mutcleaner")
+package = Path("ELEVar-main/model")
 with Path("code.py").open("w", encoding="utf-8") as out:
     for path in sorted(package.rglob("*.py")):
         name = ".".join(path.relative_to(package.parent).parts)
