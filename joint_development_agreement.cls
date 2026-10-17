@@ -110,9 +110,7 @@
   \par\vspace{1em}
   \int_step_inline:nn {\seq_count:N \g__agreement_party_name_seq}
   {
-    \__agreement_party_label:n{##1}：
-    \Field{\seq_item:Nn \g__agreement_party_name_seq {##1}}，
-    身份证号：\Field{\seq_item:Nn \g__agreement_party_id_seq {##1}}，
+    \__agreement_party_label:n{##1}（签字）：\underline{\hspace{6em}}，
     签订时间：\Field{\seq_item:Nn \g__agreement_party_date_seq {##1}}\par
   }
 }
